@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
+/*Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'TicketsController@create');
 Route::get('/home','PagesController@home');
@@ -37,4 +37,15 @@ Route::get('sendemail', function () {
 
     return "Your email has been sent successfully";
 
-});
+});*/
+
+Route::controllers([
+  'auth' => 'Auth\AuthController',
+  'password' => 'Auth\PasswordController',
+]);
+
+Route::get('/' , function() {
+	
+		return view('p1welcome');
+	});
+Route::get('/register_student' , 'ExamController@register_student');
